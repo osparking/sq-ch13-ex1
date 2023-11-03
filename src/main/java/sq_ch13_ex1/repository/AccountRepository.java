@@ -21,7 +21,7 @@ public class AccountRepository {
 	
 	public void changeAmount(long id, BigDecimal amount) {
 		String sql = "update account set amount=? where id=?";
-		jdbcTemplate.update(sql, id, amount);
+		jdbcTemplate.update(sql, amount, id);
 	}
 	
 	public List<Account> allAccounts() {
