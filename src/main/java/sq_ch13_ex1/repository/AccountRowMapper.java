@@ -11,8 +11,11 @@ public class AccountRowMapper implements RowMapper<Account>{
 
 	@Override
 	public Account mapRow(ResultSet rs, int rowNum) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		var account = new Account();
+		account.setId(rs.getInt("id"));
+		account.setName(rs.getString("name"));
+		account.setAmount(rs.getBigDecimal("amount"));
+		return account;
 	}
 
 }
